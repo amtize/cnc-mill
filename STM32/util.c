@@ -5,7 +5,8 @@
 
 
 
-char *split_string(const char delimiter, string str) {
+char *split_string(const char delimiter, char *str) 
+{
 	char** result    	= 0;
 	size_t num_tokens	= 0;
 	char* tmp        	= str;
@@ -30,9 +31,9 @@ char *split_string(const char delimiter, string str) {
 
 	/* Add space for terminating null string so caller
 	   knows where the list of returned strings ends. */
-	count++;
+	   num_tokens++;
 
-	result = malloc(sizeof(char*) * count);
+	result = malloc(sizeof(char*) * num_tokens);
 
 	if (result)
 	{

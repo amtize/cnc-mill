@@ -67,6 +67,12 @@
   </Target>
   <Components path="./"/>
   <Files>
+    <File name="motor_control.c" path="motor_control.c" type="1"/>
+    <File name="workflow.c" path="workflow.c" type="1"/>
+    <File name="util.c" path="util.c" type="1"/>
+    <File name="bro_code_executer.c" path="machine_control.c" type="1"/>
     <File name="main.c" path="main.c" type="1"/>
+    <File name="definitions.h" path="definitions.h" type="1"/>
+    <File name="bro_code_parser.c" path="bro_code_parser.c" type="1"/>
   </Files>
 </Project>
