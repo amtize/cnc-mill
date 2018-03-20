@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench version="2.0">
 <workbenchAdvisor/>
+<window>
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar/>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+</window>
 <mruList>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="util.c" tooltip="CNC/util.c">
 <persistable path="/CNC/util.c"/>
@@ -24,13 +30,7 @@
 <persistable path="/CNC/main.c"/>
 </file>
 <file factoryID="org.coocox.component.board.ui.editor.BoardEditorElementFactory" id="org.coocox.component.board.ui.editor.BoardBrowserEditor" name="Board" tooltip="Board">
-<persistable>
-<subPage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
+<persistable>&#x0A;<subPage/>
 </persistable>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="ELE210_Testing/cmsis_boot/main.c">
@@ -47,6 +47,9 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core_cmInstr.h" tooltip="ELE210_Testing/cmsis/core_cmInstr.h">
 <persistable path="/ELE210_Testing/cmsis/core_cmInstr.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Blinkmetoder.c" tooltip="ELE210_Testing/Blinkmetoder.c">
+<persistable path="/ELE210_Testing/Blinkmetoder.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Blinkmetoder.c" tooltip="ELE210_Testing/Blinkmetoder.c">
 <persistable path="/ELE210_Testing/Blinkmetoder.c"/>
