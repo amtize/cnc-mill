@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -g -nostartfiles -Map=aks_xyz_loggar_stm32f3disc.map -O2 --gc-sections -lm -LC:\CooCox\CoIDE\configuration\ProgramData\Avstandsregulator -TC:\CooCox\CoIDE\configuration\ProgramData\Avstandsregulator/arm-gcc-link.ld -g">
+      <target file="aks_xyz_loggar_stm32f3disc.elf" lastModified="16069de432d">
+         <source file="..\obj\GPIO_Toggle_Example.o" lastModified="16069cf948a"/>
+         <source file="..\obj\PID_metodar.o" lastModified="16069de2a9c"/>
+         <source file="..\obj\stm32f30x_rcc.o" lastModified="16069cf9b83"/>
+         <source file="..\obj\stm32f3_discovery_lsm303dlhc.o" lastModified="16069cf9ef2"/>
+         <source file="..\obj\TIM_metodar.o" lastModified="16069de2dbd"/>
+         <source file="..\obj\system_stm32f30x.o" lastModified="16069cfa513"/>
+         <source file="..\obj\stm32f30x_adc.o" lastModified="16069cfa8cd"/>
+         <source file="..\obj\UART_metodar.o" lastModified="16069de3116"/>
+         <source file="..\obj\stm32f30x_it.o" lastModified="16069cfaf3d"/>
+         <source file="..\obj\stm32f30x_gpio.o" lastModified="16069cfb26c"/>
+         <source file="..\obj\main.o" lastModified="16069de3424"/>
+         <source file="..\obj\stm32f30x_dma.o" lastModified="16069cfb8b6"/>
+         <source file="..\obj\printf.o" lastModified="16069cfbc32"/>
+         <source file="..\obj\avbrots_metodar.o" lastModified="16069de3751"/>
+         <source file="..\obj\GPIO_metodar.o" lastModified="16069de3a63"/>
+         <source file="..\obj\stm32f30x_exti.o" lastModified="16069cfc583"/>
+         <source file="..\obj\stm32f30x_spi.o" lastModified="16069cfc8f8"/>
+         <source file="..\obj\stm32f30x_i2c.o" lastModified="16069cfcc5e"/>
+         <source file="..\obj\initialisering.o" lastModified="16069de3d60"/>
+         <source file="..\obj\system_stm32f30x_temp.o" lastModified="16069cfd27b"/>
+         <source file="..\obj\syscalls.o" lastModified="16069cfd57c"/>
+         <source file="..\obj\stm32f30x_misc.o" lastModified="16069cfd88d"/>
+         <source file="..\obj\stm32f30x_tim.o" lastModified="16069cfdcfa"/>
+         <source file="..\obj\stm32f3_discovery_l3gd20.o" lastModified="16069cfe03e"/>
+         <source file="..\obj\startup_stm32f30x.o" lastModified="16069cfe31d"/>
+         <source file="..\obj\stm32f30x_syscfg.o" lastModified="16069cfe62d"/>
+         <source file="..\obj\LINMOT_metodar.o" lastModified="16069de4061"/>
+         <source file="..\obj\stm32f30x_can.o" lastModified="16069cfecd5"/>
+         <source file="..\obj\stm32f3_discovery.o" lastModified="16069cfeff5"/>
+         <source file="..\obj\stm32f30x_usart.o" lastModified="16069cff399"/>
+      </target>
+   </processor>
+</history>
