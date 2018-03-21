@@ -10,15 +10,13 @@
 #include "extern_dekl_globale_variablar.h"
 
 //-------------------------------------------------------------//
-// Hovedprogram						  						   //
+// Hovedprogram	//
 int main(void)  {
     maskinvare_init();
+    uint32_t teller =0;
     //TIM2->CR1 = 0x00;
     while(1){
-
-    		USART2_send_tid16_sensor16_data16x3();
-//ove e gay
-
+    	signal_x_set_freq(1500);
+    		//USART2_send_tid16_sensor16_data16x3();
     }
 }
-

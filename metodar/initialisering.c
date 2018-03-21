@@ -48,12 +48,12 @@ void maskinvare_init(void) {
 	avbrot_oppstart();
 	USART3_oppstart();
 	USART2_oppstart();
-	TIM_oppstart();
+	//TIM_oppstart();
 	Lag_Tabell();
-	TIM4_oppstart_reg();
+	//TIM4_oppstart_reg();
 	ADC_oppstart();
 	//LinMot_paadrag(0);
-
+	TIM2_init();
 
 }
 

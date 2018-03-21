@@ -56,20 +56,20 @@ void SysTick_oppstart(void) {
 //----------------------------------------------------------------
 
 void SysTick_Handler(void) { // Hvert  10 ms
-	teller_10ms++;
-	if (tilstand==1){			// Dersom PÅ-tilstand
-		if (teller_10ms>=10){	// Hvert 100 ms
-			send_maaling=1;
-			teller_10ms=0;
-			tid_100ms++;
-		}
-		PID_reguler();
-	} else {					// Dersom AV-tilstand
-		teller_10ms = 0;
-		paaaadrag = 0;
-		LinMot_paadrag(0);
-		tid_100ms=0;// Stopp
-	}
-	USART3_lesInnData();
-	USART2_lesInnData();
+//	teller_10ms++;
+//	if (tilstand==1){			// Dersom PÅ-tilstand
+//		if (teller_10ms>=10){	// Hvert 100 ms
+//			send_maaling=1;
+//			teller_10ms=0;
+//			tid_100ms++;
+//		}
+//		PID_reguler();
+//	} else {					// Dersom AV-tilstand
+//		teller_10ms = 0;
+//		paaaadrag = 0;
+//		LinMot_paadrag(0);
+//		tid_100ms=0;// Stopp
+//	}
+//	USART3_lesInnData();
+//	USART2_lesInnData();
 }

@@ -25,6 +25,23 @@ uint8_t USART2_les(void);
 void USART2_send_tid16_sensor16_data16x3(void);
 void USART3_IRQHandler(void);
 void USART3_lesInnData(void);
+
+void TIM2_init(void);
+void TIM3_init(void);
+void TIM4_init(void);
+void TIM8_init(void);
+
+void signal_x_set_width(uint16_t width);
+void signal_x_set_freq(uint16_t freq);
+
+void signal_y_set_width(uint16_t width);
+void signal_y_set_period(uint16_t period);
+
+void signal_z_set_width(uint16_t width);
+void signal_z_set_period(uint16_t period);
+
+void signal_drill_set_width(uint16_t width);
+void signal_drill_set_period(uint16_t period);
 //---------------------------------------
 // Globale variablar
 //---------------------------------------
