@@ -32,9 +32,16 @@ void TIM4_init(void);
 void TIM8_init(void);
 
 void signal_x_set_freq(uint16_t freq);
+void signal_x_set_dir(uint8_t dir);
+void signal_x_set_en(uint8_t en);
+
 void signal_y_set_freq(uint16_t freq);
+
 void signal_z_set_freq(uint16_t freq);
+
 void signal_drill_set_freq(uint16_t freq);
+
+void GPIO_init(void);
 //---------------------------------------
 // Globale variablar
 //---------------------------------------
