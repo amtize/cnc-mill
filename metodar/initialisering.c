@@ -42,18 +42,21 @@ void LinMot_paadrag(int32_t paadrag2);
 
 void maskinvare_init(void) {
 
-	GPIO_oppstart();
+	//GPIO_oppstart();
 //	GPIO_1oppstart();
-	SysTick_oppstart();
-	avbrot_oppstart();
-	USART3_oppstart();
-	USART2_oppstart();
+	//SysTick_oppstart();
+	//avbrot_oppstart();
+	//USART3_oppstart();
+	//USART2_oppstart();
 	//TIM_oppstart();
-	Lag_Tabell();
+	//Lag_Tabell();
 	//TIM4_oppstart_reg();
-	ADC_oppstart();
+	//ADC_oppstart();
 	//LinMot_paadrag(0);
 	TIM2_init();
+	TIM4_init();
+	TIM3_init();
+	TIM8_init();
 
 }
 

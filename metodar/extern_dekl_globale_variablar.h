@@ -31,17 +31,10 @@ extern void TIM3_init(void);
 extern void TIM4_init(void);
 extern void TIM8_init(void);
 
-extern void signal_x_set_width(uint16_t width);
 extern void signal_x_set_freq(uint16_t freq);
-
-extern void signal_y_set_width(uint16_t width);
-extern void signal_y_set_period(uint16_t period);
-
-extern void signal_z_set_width(uint16_t width);
-extern void signal_z_set_period(uint16_t period);
-
-extern void signal_drill_set_width(uint16_t width);
-extern void signal_drill_set_period(uint16_t period);
+extern void signal_y_set_freq(uint16_t freq);
+extern void signal_z_set_freq(uint16_t freq);
+extern void signal_drill_set_freq(uint16_t freq);
 
 //---------------------------------------
 // Globale variablar
