@@ -1,6 +1,6 @@
 // Fil: extern_dekl_globale_variablar.h
-// Datamaskinkonstruksjon Høst 2017 Gruppe A
-// Ove Nicolai Dalheim, Jonas Haldorsen, Trond Løvik, Martin Rygg
+// Datamaskinkonstruksjon Hï¿½st 2017 Gruppe A
+// Ove Nicolai Dalheim, Jonas Haldorsen, Trond Lï¿½vik, Martin Rygg
 //---------------------------------------------------------------------
 #include "stdint.h"
 
@@ -93,6 +93,8 @@ extern uint8_t dodtid;
 extern uint16_t PWM_periode;
 extern uint16_t PWM_vidde;
 extern uint16_t PWM_preskalering;
+
+extern enum Direction {forward, backward};
 
 
 

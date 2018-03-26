@@ -1,6 +1,6 @@
 // Fil: dekl_globale_variablar.h
-// Datamaskinkonstruksjon Høst 2017 Gruppe A
-// Ove Nicolai Dalheim, Jonas Haldorsen, Trond Løvik, Martin Rygg
+// Datamaskinkonstruksjon Hï¿½st 2017 Gruppe A
+// Ove Nicolai Dalheim, Jonas Haldorsen, Trond Lï¿½vik, Martin Rygg
 //---------------------------------------
 
 
@@ -92,11 +92,14 @@ uint16_t iir_a = 862;
 uint8_t dodtid = 8;
 
 
-// Eksempel på variabeloppsett for TIM2, kanal 2 som er sett opp som PWM-modul
+// Eksempel pï¿½ variabeloppsett for TIM2, kanal 2 som er sett opp som PWM-modul
 //----------------------------------------------------
 
 uint16_t PWM_periode = 100;
 uint16_t PWM_vidde = 50;
 uint16_t PWM_preskalering = 0;
 
-
+//--------------------------------------------
+// Datatypes
+//--------------------------------------------
+enum Direction {forward, backward};
