@@ -40,7 +40,7 @@ Bro_Code * parse(char *str) {
      for(;*str;str++) {
          if (*str == 'L') {
             bro_code->cmd = Move_Linear;
-            str++; //Jumping over "L"
+            str++; //Increment str to "jump over" 'L'
             bro_code->point = *parse_point(str);
             break;
         }
@@ -49,7 +49,7 @@ Bro_Code * parse(char *str) {
 }
 
 Point * parse_point(char *str) {
-    Point *point = malloc( sizeof (Point) ); //TODO: Free this
+    Point *point = malloc( sizeof (Point) ); //TODO: IMPORTANT! Free this
 
     char x[16], y[16], z[16];
     
@@ -91,11 +91,38 @@ void strcat_c (char *str, char c) {
     *str++ = 0;
 }
 
+char * split(char *str, char c) {
+    char *temp_array[128];
+    char temp[128];
+
+    int i = 1; //Reserve first spot in array for length of array
+    for(;*str;str++) {
+        if (*str == c) {
+            temp_array[i] = temp;
+            //Clear temp string
+            temp[0] = '\0';
+            i++;
+        } else {
+            //TODO: more efficient string concat
+            strcat_c(temp, *str);
+        }
+    }
+
+    char i_c = i + '0'; //Convert counter i to char
+    temp_array[0] = i_c; 
+
+    return &temp_array;
+}
+
 int main(void) {
     Bro_Code *bro_codes[128];
     int i = 0;
     char temp[128];
     int temp_i = 0;
+
+    char *str;
+    str = split(test_code, ';');
+    printf(str);
     for(;*test_code;test_code++) {
         //putchar(*test_code);
         if (*test_code == ';') {
