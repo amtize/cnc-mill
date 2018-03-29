@@ -91,27 +91,36 @@ void strcat_c (char *str, char c) {
     *str++ = 0;
 }
 
-char * split(char *str, char c) {
-    char *temp_array[128];
+char ** split(char *str, char c) {
+    //char * temp_array[128];
+    int ARR_LENGTH = 128;
+    char **arr;
+    arr = malloc(ARR_LENGTH * sizeof(char*));
+    for (int i = 0; i < 128; i++)
+    arr[i] = malloc((ARR_LENGTH+1) * sizeof(char)); 
+    //char arr[4][123]; //= malloc (ARR_LENGTH * sizeof *arr);
     char temp[128];
 
     int i = 1; //Reserve first spot in array for length of array
     for(;*str;str++) {
         if (*str == c) {
-            temp_array[i] = temp;
+            strcpy(arr[i], temp);
             //Clear temp string
             temp[0] = '\0';
             i++;
         } else {
+            
             //TODO: more efficient string concat
             strcat_c(temp, *str);
         }
     }
 
-    char i_c = i + '0'; //Convert counter i to char
-    temp_array[0] = i_c; 
+    char i_c[12]; //Convert counter i to char
+    snprintf(i_c, 12, "%d", i - 1); 
 
-    return &temp_array;
+    strcpy(arr[0], i_c);
+    
+    return arr;
 }
 
 int main(void) {
@@ -120,9 +129,11 @@ int main(void) {
     char temp[128];
     int temp_i = 0;
 
-    char *str;
+    char **str;
     str = split(test_code, ';');
-    printf(str);
+    printf(str[0]);
+    //FREE THIS!!!!!!!!!!!
+    return 0;
     for(;*test_code;test_code++) {
         //putchar(*test_code);
         if (*test_code == ';') {
