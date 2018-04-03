@@ -41,7 +41,9 @@ Bro_Code * parse(char *str) {
          if (*str == 'L') {
             bro_code->cmd = Move_Linear;
             str++; //Increment str to "jump over" 'L'
-            bro_code->point = *parse_point(str);
+            Point *point = parse_point(str);
+            bro_code->point = *point;
+            free(point);
             break;
         }
     }
@@ -49,7 +51,7 @@ Bro_Code * parse(char *str) {
 }
 
 Point * parse_point(char *str) {
-    Point *point = malloc( sizeof (Point) ); //TODO: IMPORTANT! Free this
+    Point *point = malloc( sizeof (Point) );
 
     char x[16], y[16], z[16];
     
@@ -91,26 +93,34 @@ void strcat_c (char *str, char c) {
     *str++ = 0;
 }
 
+// split() splits a string str on character c, and returns an array of strings
+//    ! - the first index of the returned array is the length of the array
 char ** split(char *str, char c) {
-    //char * temp_array[128];
-    int ARR_LENGTH = 128;
+    int ARR_LENGTH = 64;
     char **arr;
     arr = malloc(ARR_LENGTH * sizeof(char*));
-    for (int i = 0; i < 128; i++)
-    arr[i] = malloc((ARR_LENGTH+1) * sizeof(char)); 
-    //char arr[4][123]; //= malloc (ARR_LENGTH * sizeof *arr);
+    for (int i = 0; i < ARR_LENGTH; i++)
+        arr[i] = malloc((ARR_LENGTH+1) * sizeof(char)); 
+        
     char temp[128];
 
     int i = 1; //Reserve first spot in array for length of array
+
     for(;*str;str++) {
+        if (i >= ARR_LENGTH) { //Array is full, reallocate more memory
+            printf("Array out of memory, reallocating. Old length: %d, new length: %d\n", ARR_LENGTH, (ARR_LENGTH * 2)); 
+            ARR_LENGTH = ARR_LENGTH * 2;
+            arr = (char **) realloc(arr, ARR_LENGTH * sizeof(char*));
+            for (int i_ = i; i_ < ARR_LENGTH; i_++)
+                arr[i_] = malloc((ARR_LENGTH+1) * sizeof(char)); 
+        }
         if (*str == c) {
             strcpy(arr[i], temp);
             //Clear temp string
             temp[0] = '\0';
             i++;
-        } else {
-            
-            //TODO: more efficient string concat
+        } else {       
+            //TODO: more efficient string concat, doesn't have to loop through each time
             strcat_c(temp, *str);
         }
     }
@@ -118,52 +128,41 @@ char ** split(char *str, char c) {
     char i_c[12]; //Convert counter i to char
     snprintf(i_c, 12, "%d", i - 1); 
 
-    strcpy(arr[0], i_c);
+    strcpy(arr[0], i_c); 
     
     return arr;
 }
 
 int main(void) {
     Bro_Code *bro_codes[128];
-    int i = 0;
-    char temp[128];
-    int temp_i = 0;
 
     char **str;
     str = split(test_code, ';');
-    printf(str[0]);
-    //FREE THIS!!!!!!!!!!!
-    return 0;
-    for(;*test_code;test_code++) {
-        //putchar(*test_code);
-        if (*test_code == ';') {
-            bro_codes[i] = parse(temp);
 
-            //Clear temp string
-            temp[0] = '\0';
-            
-            i++;
-        } else {
-            //TODO: more efficient string concat
-            strcat_c(temp, *test_code);
-        }
-    }
-    int y = 0;
-    for (y; y < 4; y++) {
-        Motor_Instruction *ptr = calculate_frequencies(bro_codes[y]);
+    printf("Number of bro codes: ");
+    printf(str[0]);
+    printf("\n\n");
+
+    int y = 1;
+    for (y; y <= atoi(str[0]); y++) { //str[0] is reserved for length of array
+        Bro_Code *bro_code = parse(str[y]);
+        Motor_Instruction *ptr = calculate_frequencies(bro_code);
         Motor_Instruction inst = *ptr;
         printf("frequency x:%d\n", inst.freq_x);
         printf("frequency y:%d\n", inst.freq_y);
         printf("number of steps:%d\n", inst.num_steps);
         printf("direction x:%d direction y:%d\n\n", inst.dir_x, inst.dir_y);
 
-        CURRENT_POS.x = bro_codes[y]->point.x;
-        CURRENT_POS.y = bro_codes[y]->point.y;
-        CURRENT_POS.z = bro_codes[y]->point.z;
+        CURRENT_POS.x = bro_code->point.x;
+        CURRENT_POS.y = bro_code->point.y;
+        CURRENT_POS.z = bro_code->point.z;
 
         //Free previously allocated memory for motor instruction to avoid memory leakage
+        free(bro_code);
         free(ptr);
     }
+
+    free(str);
     return 0;
 }
 
@@ -175,7 +174,7 @@ Motor_Instruction * calculate_frequencies(Bro_Code* bro_code) {
 
     //Allocate memory for motor instruction. Free() must be called at a later stage
     Motor_Instruction *inst = malloc ( sizeof(Motor_Instruction) );
-    if (inst == NULL)
+    if (inst == NULL) //Out of memory
         return NULL;
 
     // Find relative movement vector by calculating difference in current_pos and desired_pos
@@ -186,7 +185,7 @@ Motor_Instruction * calculate_frequencies(Bro_Code* bro_code) {
     float delta_z = CURRENT_POS.z - bro_code->point.z;
 
     // Set direction for motors and make all delta values positive if needed
-    //  - Delta values are positive to make calculations easier at a later stage
+    //  - Delta values are set positive to make calculations easier at a later stage
     if (delta_x > 0) {
         inst->dir_x = backward;
     } else {
