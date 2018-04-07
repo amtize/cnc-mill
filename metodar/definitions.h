@@ -4,11 +4,11 @@
 static float DISTANCE_PER_STEP = (float)DISTANCE_PER_ROTATION / (STEP_MULTIPLIER * STEPS_PER_ROTATION); //Number of steps per micrometer
 //static int STEPS_PER_UM = 1 /DISTANCE_PER_STEP;
 
-static int MAX_X =700000;                      //um
-static int MAXY_Y =500000;                     //um
+//static int MAX_X =700000;                      //um
+//static int MAXY_Y =500000;                     //um
 #define MAX_FREQUENCY 800
 static float MAX_FREQUENCY_ADJUSTED = MAX_FREQUENCY / 1.57079632679; //hz / (pi/2)
-static float MAX_SPEED = 0;//DISTANCE_PER_STEP * MAX_FREQUENCY;
+//static float MAX_SPEED = 0;//DISTANCE_PER_STEP * MAX_FREQUENCY;
 
 enum State { Movement, Slow, Rapid };
 
