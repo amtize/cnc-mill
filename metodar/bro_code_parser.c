@@ -11,20 +11,20 @@
 #include <stdlib.h>
 #include <math.h>
 //FIXME: Fix this path
-#include <C:\cygwin64\home\mikrolab\cnc-mill\metodar\definitions.h>
+#include <definitions.h>
 #include <string.h>
 
 //---------------------------------------
 // Variables
 //---------------------------------------
 
-char* test_code = "L(1000,0,0);L(1000,1000,0);L(0,1000,0);L(0,0,0);";
 
 //---------------------------------------
 // Includes
 //---------------------------------------
 Point * parse_point(char *str);
 void strcat_c (char *str, char c);
+Bro_Code * parse(char *str);
 
 Motor_Instruction * calculate_frequencies(Bro_Code* bro_code);
 Point CURRENT_POS =  { .x = 0, .y = 0, .z = 0 };
@@ -133,38 +133,38 @@ char ** split(char *str, char c) {
     return arr;
 }
 
-int main(void) {
-    Bro_Code *bro_codes[128];
-
-    char **str;
-    str = split(test_code, ';');
-
-    printf("Number of bro codes: ");
-    printf(str[0]);
-    printf("\n\n");
-
-    int y = 1;
-    for (y; y <= atoi(str[0]); y++) { //str[0] is reserved for length of array
-        Bro_Code *bro_code = parse(str[y]);
-        Motor_Instruction *ptr = calculate_frequencies(bro_code);
-        Motor_Instruction inst = *ptr;
-        printf("frequency x:%d\n", inst.freq_x);
-        printf("frequency y:%d\n", inst.freq_y);
-        printf("number of steps:%d\n", inst.num_steps);
-        printf("direction x:%d direction y:%d\n\n", inst.dir_x, inst.dir_y);
-
-        CURRENT_POS.x = bro_code->point.x;
-        CURRENT_POS.y = bro_code->point.y;
-        CURRENT_POS.z = bro_code->point.z;
-
-        //Free previously allocated memory for motor instruction to avoid memory leakage
-        free(bro_code);
-        free(ptr);
-    }
-
-    free(str);
-    return 0;
-}
+//int main(void) {
+//    Bro_Code *bro_codes[128];
+//
+//    char **str;
+//    str = split(test_code, ';');
+//
+//    printf("Number of bro codes: ");
+//    printf(str[0]);
+//    printf("\n\n");
+//
+//    int y = 1;
+//    for (y; y <= atoi(str[0]); y++) { //str[0] is reserved for length of array
+//        Bro_Code *bro_code = parse(str[y]);
+//        Motor_Instruction *ptr = calculate_frequencies(bro_code);
+//        Motor_Instruction inst = *ptr;
+//        printf("frequency x:%d\n", inst.freq_x);
+//        printf("frequency y:%d\n", inst.freq_y);
+//        printf("number of steps:%d\n", inst.num_steps);
+//        printf("direction x:%d direction y:%d\n\n", inst.dir_x, inst.dir_y);
+//
+//        CURRENT_POS.x = bro_code->point.x;
+//        CURRENT_POS.y = bro_code->point.y;
+//        CURRENT_POS.z = bro_code->point.z;
+//
+//        //Free previously allocated memory for motor instruction to avoid memory leakage
+//        free(bro_code);
+//        free(ptr);
+//    }
+//
+//    free(str);
+//    return 0;
+//}
 
 
 

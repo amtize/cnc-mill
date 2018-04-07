@@ -9,6 +9,8 @@
 #include "stm32f3_discovery_lsm303dlhc.h"
 #include "declarations_global_variables.h"
 
+
+
 //-------------------------------------------------------------//
 // Hovedprogram	//
 int main(void)  {
@@ -30,6 +32,7 @@ int main(void)  {
 
     //signal_z_set_freq(800);
     while(1){
+
 //    	signal_x_set_freq(800);
 //    	signal_y_set_freq(800);
 //    	signal_z_set_freq(800);

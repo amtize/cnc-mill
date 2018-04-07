@@ -51,5 +51,4 @@ uint16_t PWM_prescale = 0;
 //--------------------------------------------
 // Datatypes
 //--------------------------------------------
-enum Direction {forward, backward};
 
