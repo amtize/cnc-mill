@@ -1,66 +1,38 @@
-// Fil: initialisering.c
-// Datamaskinkonstruksjon Høst 2017 Gruppe A
-// Ove Nicolai Dalheim, Jonas Haldorsen, Trond Løvik, Martin Rygg
-//---------------------------------------
-
-//---------------------------------------
-// Inklusjonar og definisjonar
-//---------------------------------------
-
-#include "stm32f30x.h"
-#include "stm32f3_discovery_lsm303dlhc.h"
-#include "extern_dekl_globale_variablar.h"
-volatile uint16_t push;
-//---------------------------------------
-// Funksjonsprototypar
-//---------------------------------------
-
-void maskinvare_init(void);
-void GPIO_oppstart(void);
-//void PID_oppstart();
-void USART2_oppstart(void);
-void ADC_oppstart();
-void SysTick_oppstart(void);
-void USART3_oppstart(void);
-void TIM_oppstart(void);
-void TIM4_oppstart_reg(void);
-void SPI1_oppstart(void);
-void SPI2_oppstart(void);
-void Exp_click_sokkel1_oppstart(void);
-void LinMot_oppstart(void);
-void aks_oppstart(void);
-void gyro_oppstart(void);
-void avbrot_oppstart(void);
-void Lag_Tabell(void);
-//void DMA1_oppstart(void);
-void LinMot_paadrag(int32_t paadrag2);
-
-
-//---------------------------------------
-// Funksjonsdeklarasjonar
-//---------------------------------------
-
-void maskinvare_init(void) {
-
-	//GPIO_oppstart();
-//	GPIO_1oppstart();
-	//SysTick_oppstart();
-	//avbrot_oppstart();
-	//USART3_oppstart();
-	//USART2_oppstart();
-	//TIM_oppstart();
-	//Lag_Tabell();
-	//TIM4_oppstart_reg();
-	//ADC_oppstart();
-	//LinMot_paadrag(0);
-	TIM2_init();
-	TIM4_init();
-	TIM3_init();
-	TIM8_init();
-
-}
-
-
-
-
-
+//// Fil: initialisering.c
+//// Datamaskinkonstruksjon Høst 2017 Gruppe A
+//// Ove Nicolai Dalheim, Jonas Haldorsen, Trond Løvik, Martin Rygg
+////---------------------------------------
+//
+////---------------------------------------
+//// Inklusjonar og definisjonar
+////---------------------------------------
+//
+//#include "stm32f30x.h"
+//#include "stm32f3_discovery_lsm303dlhc.h"
+//#include "extern_declarations_global_variables.h"
+//void hardware_init(void) {
+//// Signal x
+//	TIM2_init();
+//	signal_x_set_en(0);
+//
+//// Signal y
+//	TIM4_init();
+//	signal_y_set_en(0);
+//
+//// Signal z
+//	TIM3_init();
+//	signal_z_set_en(0);
+//
+//// Signal drill
+//	TIM8_init();
+//	signal_drill_set_en(0);
+//
+//// Various init
+//	GPIO_init();
+//	EXTI_init();
+//}
+//
+//
+//
+//
+//

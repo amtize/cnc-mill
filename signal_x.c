@@ -6,7 +6,7 @@
 //#include "stm32f30x.h"
 //#include "stm32f30x_gpio.h"
 //#include "stm32f30x_rcc.h"
-//#include "extern_dekl_globale_variablar.h"
+//#include "extern_declarations_global_variables.h"
 //
 //
 //
