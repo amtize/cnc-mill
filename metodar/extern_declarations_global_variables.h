@@ -6,7 +6,15 @@
 #include "stdint.h"
 
 
+//---------------------------------------
+// Datatypes
+//---------------------------------------
 
+typedef struct POINT {
+	int32_t x, y, z;
+} POINT;
+
+enum DIRECTION { forward, backward } DIRECTION;
 
 //---------------------------------------
 // Funksjonsprototyper
@@ -19,23 +27,27 @@ extern void TIM4_init(void);
 extern void TIM8_init(void);
 
 extern void signal_x_set_freq(uint16_t freq);
-extern void signal_x_set_dir(uint8_t dir);
+extern void signal_x_set_dir(enum DIRECTION dir);
 extern void signal_x_set_en(uint8_t en);
 
 extern void signal_y_set_freq(uint16_t freq);
-extern void signal_y_set_dir(uint8_t dir);
+extern void signal_y_set_dir(enum DIRECTION dir);
 extern void signal_y_set_en(uint8_t en);
 
 extern void signal_z_set_freq(uint16_t freq);
-extern void signal_z_set_dir(uint8_t dir);
+extern void signal_z_set_dir(enum DIRECTION dir);
 extern void signal_z_set_en(uint8_t en);
 
 extern void signal_drill_set_freq(uint16_t freq);
-extern void signal_drill_set_dir(uint8_t dir);
+extern void signal_drill_set_dir(enum DIRECTION dir);
 extern void signal_drill_set_en(uint8_t en);
 
 extern void GPIO_init(void);
 extern void EXTI_init(void);
+
+//extern BRO_CODE * parse(char *str);
+//extern char ** split(char *str, char c);
+//extern MOTOR_INSTRUCTION * calculate_frequencies(BRO_CODE* bro_code);
 //---------------------------------------
 // Globale variablar
 //---------------------------------------
@@ -54,4 +66,9 @@ extern uint16_t PWM_period;
 extern uint16_t PWM_width;
 extern uint16_t PWM_prescale;
 
+extern uint16_t MACHINE_ACTIVE;
+extern uint16_t MOTOR_X_ACTIVE;
+extern uint16_t MOTOR_Y_ACTIVE;
+extern uint16_t MOTOR_Z_ACTIVE;
 
+extern POINT CURRENT_POS;

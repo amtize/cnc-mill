@@ -7,33 +7,67 @@
 // Includes
 //---------------------------------------
 
+#include "stm32f30x.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-//FIXME: Fix this path
-#include <definitions.h>
 #include <string.h>
+#include <extern_declarations_global_variables.h>
 
 //---------------------------------------
 // Variables
 //---------------------------------------
+#define STEPS_PER_ROTATION 200        //200 steps per rotation
+#define STEP_MULTIPLIER 32            //each step can be divided into 32 steps
+#define DISTANCE_PER_ROTATION 4000    //micrometer
+float DISTANCE_PER_STEP = (float)DISTANCE_PER_ROTATION / (STEP_MULTIPLIER * STEPS_PER_ROTATION); //Number of steps per micrometer
+//static int STEPS_PER_UM = 1 /DISTANCE_PER_STEP;
 
+//static int MAX_X =700000;                      //um
+//static int MAXY_Y =500000;                     //um
+#define MAX_FREQUENCY 800
+float MAX_FREQUENCY_ADJUSTED = MAX_FREQUENCY / 1.57079632679; //hz / (pi/2)
+//static float MAX_SPEED = 0;//DISTANCE_PER_STEP * MAX_FREQUENCY;
+
+
+
+
+
+
+
+enum STATE { Movement, Slow, Rapid } STATE;
+
+enum COMMAND { Move_Linear, Move_Bezier, Calibrate, On, Off, Reset, SetState } COMMAND;
+
+typedef struct MOTOR_INSTRUCTION {
+    uint32_t            freq_x, freq_y, freq_z, freq_drill;
+    enum DIRECTION  	dir_x,  dir_y,  dir_z;
+    uint32_t            num_steps_x, num_steps_y, num_steps_z;
+} MOTOR_INSTRUCTION;
+
+typedef struct BRO_CODE {
+	enum COMMAND cmd;
+	//int num_points;
+	//Point *points;
+    struct POINT point;
+	//int num_bezier;
+	//Point *bezier_points;
+} BRO_CODE;
 
 //---------------------------------------
 // Includes
 //---------------------------------------
-Point * parse_point(char *str);
+POINT * parse_point(char *str);
 void strcat_c (char *str, char c);
-Bro_Code * parse(char *str);
-
-Motor_Instruction * calculate_frequencies(Bro_Code* bro_code);
-Point CURRENT_POS =  { .x = 0, .y = 0, .z = 0 };
+//Bro_Code * parse(char *str);
+//char ** split(char *str, char c);
+//Motor_Instruction * calculate_frequencies(Bro_Code* bro_code);
 //---------------------------------------
 // Methods
 //---------------------------------------
 
-Bro_Code * parse(char *str) {
-    Bro_Code *bro_code = malloc( sizeof (Bro_Code) );
+BRO_CODE * parse(char *str) {
+    BRO_CODE *bro_code = malloc( sizeof (BRO_CODE) );
     if (bro_code == NULL)
         return NULL;
 
@@ -41,7 +75,7 @@ Bro_Code * parse(char *str) {
          if (*str == 'L') {
             bro_code->cmd = Move_Linear;
             str++; //Increment str to "jump over" 'L'
-            Point *point = parse_point(str);
+            POINT *point = parse_point(str);
             bro_code->point = *point;
             free(point);
             break;
@@ -50,18 +84,18 @@ Bro_Code * parse(char *str) {
     return bro_code;
 }
 
-Point * parse_point(char *str) {
-    Point *point = malloc( sizeof (Point) );
+POINT * parse_point(char *str) {
+    POINT *point = malloc( sizeof (POINT) );
 
     char x[16], y[16], z[16];
-    
+
     //Clear strings (this is needed because there may be old values stored in the arrays)
     x[0] = '\0';
     y[0] = '\0';
     z[0] = '\0';
 
     char* temp=str;
-    
+
     for (; *temp; ++temp){
         if (*temp == '(') continue;
         if (*temp == ',') break;
@@ -77,7 +111,7 @@ Point * parse_point(char *str) {
         if (*temp == ')') break;
         strcat_c(z, *temp);
     }
-    
+
     //Convert from string to floats
     point->x = atof(x);
     point->y = atof(y);
@@ -88,8 +122,8 @@ Point * parse_point(char *str) {
 
 //Concat a char onto a string
 void strcat_c (char *str, char c) {
-    for (;*str;str++); // note the terminating semicolon here. 
-    *str++ = c; 
+    for (;*str;str++); // note the terminating semicolon here.
+    *str++ = c;
     *str++ = 0;
 }
 
@@ -100,36 +134,36 @@ char ** split(char *str, char c) {
     char **arr;
     arr = malloc(ARR_LENGTH * sizeof(char*));
     for (int i = 0; i < ARR_LENGTH; i++)
-        arr[i] = malloc((ARR_LENGTH+1) * sizeof(char)); 
-        
+        arr[i] = malloc((ARR_LENGTH+1) * sizeof(char));
+
     char temp[128];
 
     int i = 1; //Reserve first spot in array for length of array
 
     for(;*str;str++) {
         if (i >= ARR_LENGTH) { //Array is full, reallocate more memory
-            printf("Array out of memory, reallocating. Old length: %d, new length: %d\n", ARR_LENGTH, (ARR_LENGTH * 2)); 
+            printf("Array out of memory, reallocating. Old length: %d, new length: %d\n", ARR_LENGTH, (ARR_LENGTH * 2));
             ARR_LENGTH = ARR_LENGTH * 2;
             arr = (char **) realloc(arr, ARR_LENGTH * sizeof(char*));
             for (int i_ = i; i_ < ARR_LENGTH; i_++)
-                arr[i_] = malloc((ARR_LENGTH+1) * sizeof(char)); 
+                arr[i_] = malloc((ARR_LENGTH+1) * sizeof(char));
         }
         if (*str == c) {
             strcpy(arr[i], temp);
             //Clear temp string
             temp[0] = '\0';
             i++;
-        } else {       
+        } else {
             //TODO: more efficient string concat, doesn't have to loop through each time
             strcat_c(temp, *str);
         }
     }
 
     char i_c[12]; //Convert counter i to char
-    snprintf(i_c, 12, "%d", i - 1); 
+    snprintf(i_c, 12, "%d", i - 1);
 
-    strcpy(arr[0], i_c); 
-    
+    strcpy(arr[0], i_c);
+
     return arr;
 }
 
@@ -170,10 +204,10 @@ char ** split(char *str, char c) {
 
 
 
-Motor_Instruction * calculate_frequencies(Bro_Code* bro_code) {
+MOTOR_INSTRUCTION * calculate_frequencies(BRO_CODE* bro_code) {
 
     //Allocate memory for motor instruction. Free() must be called at a later stage
-    Motor_Instruction *inst = malloc ( sizeof(Motor_Instruction) );
+	MOTOR_INSTRUCTION *inst = malloc ( sizeof(MOTOR_INSTRUCTION) );
     if (inst == NULL) //Out of memory
         return NULL;
 
@@ -209,13 +243,12 @@ Motor_Instruction * calculate_frequencies(Bro_Code* bro_code) {
     inst->freq_x = MAX_FREQUENCY_ADJUSTED * atan2(delta_x, delta_y);
     inst->freq_y = MAX_FREQUENCY_ADJUSTED * atan2(delta_y, delta_x);
     inst->freq_z = 0;
-    // TODO: Freq_z currently set to 0, fix this. 
+    // TODO: Freq_z currently set to 0, fix this.
 
     // Calculate number of steps
-    float len = sqrt( pow(delta_x, 2) + pow(delta_y, 2) );
-    inst->num_steps = (int) len / DISTANCE_PER_STEP;
-
-    printf("length of vector:%.6f\n", (float)len);
+    inst->num_steps_x = (uint32_t) delta_x / DISTANCE_PER_STEP;
+    inst->num_steps_y = (uint32_t) delta_y / DISTANCE_PER_STEP;
+    inst->num_steps_z = (uint32_t) delta_z / DISTANCE_PER_STEP;
 
     return inst;
 }
