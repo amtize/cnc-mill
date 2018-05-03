@@ -12,7 +12,8 @@
 //#include "bro_code_parser.c"
 #include <stdlib.h>
 
-char *test_code = "L(100000,0,0);L(100000,100000,0);L(0,100000,0);L(0,0,0);";
+
+char *test_code = "L(1000000,0,0);";//"L(0,20000,0);L(20000,20000,0);L(20000,0,0);L(0,0,0);L(0,0,1000);L(0,20000,1000);L(20000,20000,1000);L(20000,0,1000);L(0,0,1000);L(0,0,0);";
 
 
 //-------------------------------------------------------------//
@@ -48,13 +49,12 @@ int main(void)  {
 		for (; y <= atoi(str[0]); y++) { //str[0] is reserved for length of array
 
 			//Wait for machine to become idle (!active)
-			while(MACHINE_ACTIVE) {
-				if (!MOTOR_X_ACTIVE && !MOTOR_Y_ACTIVE && !MOTOR_Z_ACTIVE) {
+			while(MACHINE_ACTIVE == 1) {
+				if ((MOTOR_X_ACTIVE == 0) && (MOTOR_Y_ACTIVE == 0) && (MOTOR_Z_ACTIVE == 0) ) {
 					MACHINE_ACTIVE = 0;
 				}
 			}
 
-			MACHINE_ACTIVE = 1; //TODO: Set this to 0 in timer interuption handlers
 
 			BRO_CODE *bro_code = parse(str[y]);
 			MOTOR_INSTRUCTION *ptr = calculate_frequencies(bro_code);
@@ -71,20 +71,39 @@ int main(void)  {
 			number_of_steps_signal_z = inst.num_steps_z;
 
 			//Set signal frequencies for motors
-			signal_x_set_freq(inst.freq_x);
-			signal_x_set_dir(inst.dir_x);
-			signal_x_set_en(1);
-			MOTOR_X_ACTIVE = 1;
 
-			signal_y_set_freq(inst.freq_y);
-			signal_y_set_dir(inst.dir_y);
-			signal_y_set_en(1);
-			MOTOR_Y_ACTIVE = 1;
+			if (inst.num_steps_x > 0) {
+				signal_x_set_freq(inst.freq_x);
+				signal_x_set_dir(inst.dir_x);
+				signal_x_set_en(1);
+				MOTOR_X_ACTIVE = 1;
+				count_step_signal_x = 0;
+			} else {
+			}
 
-			signal_z_set_freq(inst.freq_z);
-			signal_z_set_dir(inst.dir_z);
-			signal_z_set_en(1);
-			MOTOR_Z_ACTIVE = 1;
+			if (inst.num_steps_y > 0) {
+				signal_y_set_freq(inst.freq_y);
+				signal_y_set_dir(inst.dir_y);
+				signal_y_set_en(1);
+				MOTOR_Y_ACTIVE = 1;
+				count_step_signal_y = 0;
+			} else {
+			}
+
+			if (inst.num_steps_z > 0) {
+				signal_z_set_freq(inst.freq_z);
+				signal_z_set_dir(inst.dir_z);
+				signal_z_set_en(1);
+				MOTOR_Z_ACTIVE = 1;
+				count_step_signal_z = 0;
+			} else {
+			}
+
+
+
+
+			MACHINE_ACTIVE = 1; //TODO: Set this to 0 in timer interuption handlers
+
 
 			//Update current_pos (FIXME: this should be done inside timer interuption handlers)
 			CURRENT_POS.x = bro_code->point.x;
@@ -96,6 +115,9 @@ int main(void)  {
 			free(ptr);
 		}
 
+		//for (int i = i; i < atoi(str[0]); i++)
+		//        free(str[i]);
+		//free(str[0]);
 		free(str);
 
 //    	signal_x_set_freq(800);
