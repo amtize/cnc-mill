@@ -66,9 +66,9 @@ extern uint16_t PWM_period;
 extern uint16_t PWM_width;
 extern uint16_t PWM_prescale;
 
-extern uint16_t MACHINE_ACTIVE;
-extern uint16_t MOTOR_X_ACTIVE;
-extern uint16_t MOTOR_Y_ACTIVE;
-extern uint16_t MOTOR_Z_ACTIVE;
+extern volatile uint16_t MACHINE_ACTIVE;
+extern volatile uint16_t MOTOR_X_ACTIVE;
+extern volatile uint16_t MOTOR_Y_ACTIVE;
+extern volatile uint16_t MOTOR_Z_ACTIVE;
 
 extern POINT CURRENT_POS;

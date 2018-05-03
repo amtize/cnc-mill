@@ -147,11 +147,13 @@ void EXTI_init(void){
 
 void EXTI4_IRQHandler(void){
 	if(EXTI_GetITStatus(EXTI_Line4) != RESET){
+
 		count_step_signal_x++;
 
 		if (count_step_signal_x > number_of_steps_signal_x) {
 			MOTOR_X_ACTIVE = 0;
 			count_step_signal_x = 0;
+			signal_x_set_en(0);
 		}
 
 		EXTI_ClearITPendingBit(EXTI_Line4);
@@ -165,6 +167,7 @@ void EXTI1_IRQHandler(void){
 		if (count_step_signal_y > number_of_steps_signal_y) {
 			MOTOR_Y_ACTIVE = 0;
 			count_step_signal_y = 0;
+			signal_y_set_en(0);
 		}
 
 		EXTI_ClearITPendingBit(EXTI_Line1);
@@ -178,6 +181,7 @@ void EXTI0_IRQHandler(void){
 		if (count_step_signal_z > number_of_steps_signal_z) {
 			MOTOR_Z_ACTIVE = 0;
 			count_step_signal_z = 0;
+			signal_z_set_en(0);
 		}
 
 		EXTI_ClearITPendingBit(EXTI_Line0);

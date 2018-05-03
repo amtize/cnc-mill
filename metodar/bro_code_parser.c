@@ -25,7 +25,7 @@ float DISTANCE_PER_STEP = (float)DISTANCE_PER_ROTATION / (STEP_MULTIPLIER * STEP
 
 //static int MAX_X =700000;                      //um
 //static int MAXY_Y =500000;                     //um
-#define MAX_FREQUENCY 800
+#define MAX_FREQUENCY 2000
 float MAX_FREQUENCY_ADJUSTED = MAX_FREQUENCY / 1.57079632679; //hz / (pi/2)
 //static float MAX_SPEED = 0;//DISTANCE_PER_STEP * MAX_FREQUENCY;
 
@@ -212,7 +212,7 @@ MOTOR_INSTRUCTION * calculate_frequencies(BRO_CODE* bro_code) {
         return NULL;
 
     // Find relative movement vector by calculating difference in current_pos and desired_pos
-    //  - Current pos is the point which the machine is currently at
+    //  - CURRENT_POS is the point which the machine is currently at
     //  - Desired pos is the point specified in the recieved bro_code
     float delta_x = CURRENT_POS.x - bro_code->point.x;
     float delta_y = CURRENT_POS.y - bro_code->point.y;
@@ -242,13 +242,13 @@ MOTOR_INSTRUCTION * calculate_frequencies(BRO_CODE* bro_code) {
     // Calculate frequencies:
     inst->freq_x = MAX_FREQUENCY_ADJUSTED * atan2(delta_x, delta_y);
     inst->freq_y = MAX_FREQUENCY_ADJUSTED * atan2(delta_y, delta_x);
-    inst->freq_z = 0;
+    inst->freq_z = MAX_FREQUENCY_ADJUSTED;
     // TODO: Freq_z currently set to 0, fix this.
 
     // Calculate number of steps
-    inst->num_steps_x = (uint32_t) delta_x / DISTANCE_PER_STEP;
-    inst->num_steps_y = (uint32_t) delta_y / DISTANCE_PER_STEP;
-    inst->num_steps_z = (uint32_t) delta_z / DISTANCE_PER_STEP;
+    inst->num_steps_x = (uint32_t) delta_x; // DISTANCE_PER_STEP;
+    inst->num_steps_y = (uint32_t) delta_y; // DISTANCE_PER_STEP;
+    inst->num_steps_z = (uint32_t) delta_z; // DISTANCE_PER_STEP;
 
     return inst;
 }

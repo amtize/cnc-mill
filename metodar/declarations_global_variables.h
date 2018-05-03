@@ -82,9 +82,9 @@ uint16_t PWM_period = 100;
 uint16_t PWM_width = 50;
 uint16_t PWM_prescale = 0;
 
-uint16_t MACHINE_ACTIVE = 0;
-uint16_t MOTOR_X_ACTIVE = 0;
-uint16_t MOTOR_Y_ACTIVE = 0;
-uint16_t MOTOR_Z_ACTIVE = 0;
+volatile uint16_t MACHINE_ACTIVE = 0;
+volatile uint16_t MOTOR_X_ACTIVE = 0;
+volatile uint16_t MOTOR_Y_ACTIVE = 0;
+volatile uint16_t MOTOR_Z_ACTIVE = 0;
 
-POINT CURRENT_POS = { .x = 0, .y = 0, .z = 0 };
+volatile POINT CURRENT_POS = { .x = 0, .y = 0, .z = 0 };
