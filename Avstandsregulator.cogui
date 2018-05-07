@@ -19,37 +19,42 @@
 <part id="4"/>
 <part id="5"/>
 <part id="6"/>
+<part id="7"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/main.c" title="main.c" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="771" selectionTopPixel="8"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2403" selectionTopPixel="1080"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="interrupt_methods.c" partName="interrupt_methods.c" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/interrupt_methods.c" title="interrupt_methods.c" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/interrupt_methods.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="interrupt_methods.c" partName="interrupt_methods.c" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/interrupt_methods.c" title="interrupt_methods.c" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/interrupt_methods.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/methods/interrupt_methods.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3489" selectionTopPixel="1556"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11303" selectionTopPixel="6148"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="extern_declarations_global_variables.h" partName="extern_declarations_global_variables.h" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/extern_declarations_global_variables.h" title="extern_declarations_global_variables.h" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/extern_declarations_global_variables.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/methods/extern_declarations_global_variables.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="48" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="48" selectionTopPixel="639"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="declarations_global_variables.h" partName="declarations_global_variables.h" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/declarations_global_variables.h" title="declarations_global_variables.h" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/declarations_global_variables.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/methods/declarations_global_variables.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="48" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2561" selectionTopPixel="911"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="TIM_methods.c" partName="TIM_methods.c" path="C:/Users/Bruker/Documents/H2017/ELE340_Datamaskinkonstruksjon/Code/Coide/Styrenode/TIM_methods.c" title="TIM_methods.c" tooltip="C:/Users/Bruker/Documents/H2017/ELE340_Datamaskinkonstruksjon/Code/Coide/Styrenode/TIM_methods.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="TIM_methods.c" partName="TIM_methods.c" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/TIM_methods.c" title="TIM_methods.c" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/TIM_methods.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/methods/TIM_methods.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5526" selectionTopPixel="3450"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5526" selectionTopPixel="250"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO_methods.c" partName="GPIO_methods.c" path="C:/Users/Bruker/Documents/H2017/ELE340_Datamaskinkonstruksjon/Code/Coide/Styrenode/GPIO_methods.c" title="GPIO_methods.c" tooltip="C:/Users/Bruker/Documents/H2017/ELE340_Datamaskinkonstruksjon/Code/Coide/Styrenode/GPIO_methods.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO_methods.c" partName="GPIO_methods.c" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/GPIO_methods.c" title="GPIO_methods.c" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/GPIO_methods.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/methods/GPIO_methods.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="21" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="1113" selectionTopPixel="1017"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MOT_signals.c" partName="MOT_signals.c" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/MOT_signals.c" title="MOT_signals.c" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/MOT_signals.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MOT_signals.c" partName="MOT_signals.c" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/MOT_signals.c" title="MOT_signals.c" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/metodar/MOT_signals.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/methods/MOT_signals.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="20" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="20" selectionTopPixel="1020"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f30x_gpio.h" partName="stm32f30x_gpio.h" path="C:/Users/Bruker/Documents/Bachelor/CoIDE/cmsis_lib/include/stm32f30x_gpio.h" title="stm32f30x_gpio.h" tooltip="C:/Users/Bruker/Documents/Bachelor/CoIDE/cmsis_lib/include/stm32f30x_gpio.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avstandsregulator/cmsis_lib/include/stm32f30x_gpio.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="5002" selectionTopPixel="3610"/>
 </editor>
 </editors>
 <views>
@@ -57,15 +62,7 @@
 <viewState/>
 </view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
-<expanded>
-<element path="/Avstandsregulator"/>
-<element path="/Avstandsregulator/methods"/>
-</expanded>
-<selection>
-<element path="/Avstandsregulator/methods/interrupt_methods.c"/>
-</selection>
-</viewState>
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0"/>
 </view>
 <view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
 <viewState/>
@@ -141,7 +138,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@9ced39" ratio="0.610687" ratioLeft="560" ratioRight="357" relationship="4" relative="org.eclipse.ui.internal.ViewStack@71a8e4">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@9ced39" ratio="0.7270789" ratioLeft="682" ratioRight="256" relationship="4" relative="org.eclipse.ui.internal.ViewStack@71a8e4">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -296,169 +293,168 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/TIM_methods.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/GPIO_methods.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/dekl_globale_variablar.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/initialisering.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/extern_declarations_global_variables.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/interrupt_methods.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/calculations.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/cmsis_lib/include/stm32f30x_gpio.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/declarations_global_variables.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/MOT_signals.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/TIM_methods.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/signal_x.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/extern_declarations_global_variables.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/declarations_global_variables.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/GPIO_methods.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/TIM_methods.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avstandsregulator/methods/interrupt_methods.c"/>
 </editors>
-<item historyLabel="initialisering.c" index="3">
-<position info="not_deleted" x="405" y="36"/>
+<item historyLabel="stm32f30x_gpio.h" index="4">
+<position info="not_deleted" x="5002" y="9"/>
 </item>
-<item historyLabel="calculations.c" index="5">
-<position info="not_deleted" x="190" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11277" y="0"/>
 </item>
-<item historyLabel="declarations_global_variables.h" index="6">
-<position info="not_deleted" x="202" y="0"/>
-</item>
-<item historyLabel="dekl_globale_variablar.h" index="2">
-<position info="not_deleted" x="0" y="1708"/>
-</item>
-<item historyLabel="extern_declarations_global_variables.h" index="10">
-<position info="not_deleted" x="231" y="0"/>
-</item>
-<item historyLabel="GPIO_methods.c" index="1">
-<position info="not_deleted" x="893" y="0"/>
-</item>
-<item historyLabel="initialisering.c" index="3">
-<position info="not_deleted" x="405" y="36"/>
-</item>
-<item historyLabel="interrupt_methods.c" index="4">
-<position info="not_deleted" x="743" y="0"/>
-</item>
-<item historyLabel="MOT_signals.c" index="7">
-<position info="not_deleted" x="1131" y="0"/>
-</item>
-<item historyLabel="signal_x.c" index="9">
-<position info="not_deleted" x="329" y="0"/>
-</item>
-<item historyLabel="TIM_methods.c" index="8">
-<position info="not_deleted" x="824" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="542" y="36"/>
-</item>
-<item historyLabel="dekl_globale_variablar.h" index="2">
-<position info="not_deleted" x="438" y="0"/>
-</item>
-<item historyLabel="declarations_global_variables.h" index="6">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="extern_declarations_global_variables.h" index="10">
-<position info="not_deleted" x="231" y="0"/>
-</item>
-<item historyLabel="interrupt_methods.c" index="4">
-<position info="not_deleted" x="743" y="0"/>
-</item>
-<item historyLabel="declarations_global_variables.h" index="6">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="dekl_globale_variablar.h" index="2">
-<position info="not_deleted" x="438" y="0"/>
-</item>
-<item historyLabel="declarations_global_variables.h" index="6">
-<position info="not_deleted" x="335" y="0"/>
-</item>
-<item historyLabel="initialisering.c" index="3">
-<position info="not_deleted" x="775" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="542" y="36"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2035" y="0"/>
-</item>
-<item historyLabel="initialisering.c" index="3">
-<position info="not_deleted" x="478" y="297"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2035" y="0"/>
-</item>
-<item historyLabel="initialisering.c" index="3">
-<position info="not_deleted" x="0" y="802"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1559" y="0"/>
-</item>
-<item historyLabel="initialisering.c" index="3">
-<position info="not_deleted" x="0" y="802"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1559" y="0"/>
-</item>
-<item historyLabel="calculations.c" index="5">
-<position info="not_deleted" x="190" y="0"/>
-</item>
-<item historyLabel="TIM_methods.c" index="8">
-<position info="not_deleted" x="0" y="189"/>
-</item>
-<item historyLabel="calculations.c" index="5">
-<position info="not_deleted" x="21" y="0"/>
-</item>
-<item historyLabel="TIM_methods.c" index="8">
-<position info="not_deleted" x="0" y="189"/>
-</item>
-<item historyLabel="declarations_global_variables.h" index="6">
+<item historyLabel="extern_declarations_global_variables.h" index="2">
 <position info="not_deleted" x="48" y="0"/>
 </item>
-<item historyLabel="extern_declarations_global_variables.h" index="10">
+<item historyLabel="declarations_global_variables.h" index="5">
 <position info="not_deleted" x="48" y="0"/>
 </item>
-<item historyLabel="GPIO_methods.c" index="1">
-<position info="not_deleted" x="21" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11277" y="0"/>
 </item>
-<item historyLabel="interrupt_methods.c" index="4">
-<position info="not_deleted" x="28" y="0"/>
-</item>
-<item historyLabel="MOT_signals.c" index="7">
+<item historyLabel="MOT_signals.c" index="6">
 <position info="not_deleted" x="20" y="0"/>
 </item>
-<item historyLabel="signal_x.c" index="9">
-<position info="not_deleted" x="329" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11432" y="0"/>
 </item>
-<item historyLabel="MOT_signals.c" index="7">
+<item historyLabel="MOT_signals.c" index="6">
 <position info="not_deleted" x="20" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1559" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11432" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="738" y="0"/>
+<item historyLabel="MOT_signals.c" index="6">
+<position info="not_deleted" x="20" y="0"/>
 </item>
-<item historyLabel="TIM_methods.c" index="11">
-<position info="not_deleted" x="5430" y="52"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="478" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="799" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11663" y="0"/>
 </item>
-<item historyLabel="TIM_methods.c" index="11">
-<position info="not_deleted" x="5430" y="52"/>
+<item historyLabel="TIM_methods.c" index="0">
+<position info="not_deleted" x="5526" y="0"/>
 </item>
-<item historyLabel="interrupt_methods.c" index="12">
-<position info="not_deleted" x="3489" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="12592" y="0"/>
 </item>
-<item historyLabel="TIM_methods.c" index="11">
-<position info="not_deleted" x="5372" y="0"/>
+<item historyLabel="main.c" index="1">
+<position/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="799" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="12592" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11212" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="3543" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="647" y="0"/>
+</item>
+<item historyLabel="declarations_global_variables.h" index="5">
+<position info="not_deleted" x="2566" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="3543" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="647" y="0"/>
+</item>
+<item historyLabel="declarations_global_variables.h" index="5">
+<position info="not_deleted" x="1983" y="11"/>
+</item>
+<item historyLabel="extern_declarations_global_variables.h" index="2">
+<position info="not_deleted" x="48" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="3543" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11042" y="18"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="892" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="12731" y="0"/>
+</item>
+<item historyLabel="extern_declarations_global_variables.h" index="8">
+<position info="not_deleted" x="48" y="0"/>
+</item>
+<item historyLabel="declarations_global_variables.h" index="9">
+<position info="not_deleted" x="2561" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="646" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11253" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="646" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11253" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="646" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="776" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="4336" y="13"/>
+</item>
+<item historyLabel="GPIO_methods.c" index="10">
+<position info="not_deleted" x="1280" y="124"/>
+</item>
+<item historyLabel="GPIO_methods.c" index="10">
+<position info="not_deleted" x="1113" y="9"/>
 </item>
 <item historyLabel="TIM_methods.c" index="11">
 <position info="not_deleted" x="5526" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="771" y="0"/>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="12033" y="0"/>
 </item>
-<item active="true" historyLabel="TIM_methods.c" index="11">
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="655" y="0"/>
+</item>
+<item historyLabel="declarations_global_variables.h" index="9">
+<position info="not_deleted" x="2561" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="655" y="0"/>
+</item>
+<item historyLabel="TIM_methods.c" index="11">
 <position info="not_deleted" x="5526" y="0"/>
+</item>
+<item historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11235" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="655" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="773" y="0"/>
+</item>
+<item historyLabel="main.c" index="7">
+<position info="not_deleted" x="2403" y="0"/>
+</item>
+<item active="true" historyLabel="interrupt_methods.c" index="3">
+<position info="not_deleted" x="11235" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -467,14 +463,26 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f30x_gpio.h" tooltip="Avstandsregulator/cmsis_lib/include/stm32f30x_gpio.h">
+<persistable path="/Avstandsregulator/cmsis_lib/include/stm32f30x_gpio.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f30x_exti.h" tooltip="Avstandsregulator/cmsis_lib/include/stm32f30x_exti.h">
+<persistable path="/Avstandsregulator/cmsis_lib/include/stm32f30x_exti.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f30x.h" tooltip="Avstandsregulator/cmsis_boot/stm32f30x.h">
+<persistable path="/Avstandsregulator/cmsis_boot/stm32f30x.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="definitions.h" tooltip="Avstandsregulator/methods/definitions.h">
+<persistable path="/Avstandsregulator/methods/definitions.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bro_code_parser.c" tooltip="Avstandsregulator/methods/bro_code_parser.c">
+<persistable path="/Avstandsregulator/methods/bro_code_parser.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="MOT_signals.c" tooltip="Avstandsregulator/methods/MOT_signals.c">
 <persistable path="/Avstandsregulator/methods/MOT_signals.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO_methods.c" tooltip="Avstandsregulator/methods/GPIO_methods.c">
 <persistable path="/Avstandsregulator/methods/GPIO_methods.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="calculations.c" tooltip="Avstandsregulator/methods/calculations.c">
-<persistable path="/Avstandsregulator/methods/calculations.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="initialisering.c" tooltip="Avstandsregulator/methods/initialisering.c">
 <persistable path="/Avstandsregulator/methods/initialisering.c"/>
@@ -499,18 +507,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Avstandsregulator/main.c">
 <persistable path="/Avstandsregulator/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UART_metodar.c" tooltip="Avstandsregulator/methods/UART_metodar.c">
-<persistable path="/Avstandsregulator/methods/UART_metodar.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="TIM_metodar.c" tooltip="Avstandsregulator/methods/TIM_metodar.c">
-<persistable path="/Avstandsregulator/methods/TIM_metodar.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="signal_x.c" tooltip="Avstandsregulator/methods/signal_x.c">
-<persistable path="/Avstandsregulator/methods/signal_x.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="regning.c" tooltip="Avstandsregulator/methods/regning.c">
-<persistable path="/Avstandsregulator/methods/regning.c"/>
 </file>
 </mruList>
 </workbench>

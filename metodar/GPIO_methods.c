@@ -4,17 +4,17 @@
 //-------------------------------------------------------------//
 
 
-// DIR Signal x 	- PC2 	- GPIO C
-// EN  Signal x		- PF2	- GPIO F
+// DIRx 	- PC2 	- DIRECTION SIGNAL FOR STEPPER MOTOR ON X-AXIS
+// ENAx		- PF2	- ENABLE SIGNAL FOR STEPPER MOTOR ON X-AXIS
 //
-// DIR Signal y 	- PB11 	- GPIO B
-// EN  Signal y 	- PD13 	- GPIO D
+// DIRy 	- PB11 	- DIRECTION SIGNAL FOR STEPPER MOTOR ON Y-AXIS
+// ENAy 	- PD13 	- ENABLE SIGNAL FOR STEPPER MOTOR ON Y-AXIS
 //
-// DIR Signal z 	- PB5 	- GPIO B
-// EN  Signal z 	- PF9 	- GPIO F
+// DIRz 	- PB5 	- DIRECTION SIGNAL FOR STEPPER MOTOR ON Z-AXIS
+// ENAz 	- PF9 	- ENABLE SIGNAL FOR STEPPER MOTOR ON Z-AXIS
 //
-// DIR Signal drill	- PC9 	- GPIO C
-// EN  Signal drill	- PF6 	- GPIO F
+// DIRs		- PC9 	- DIRECTION SIGNAL FOR SPINDLE MOTOR
+// ENAs		- PF6 	- ENABLE SIGNAL FOR SPINDLE MOTOR
 
 
 //---------------------------------------
@@ -50,8 +50,8 @@ void GPIO_init(void)  {
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOF, ENABLE);
 
 //_________________________ GPIOB _________________________//
-	// DIR Signal z 	- PB5 	- GPIO B
-	// DIR Signal y 	- PB11 	- GPIO B
+	// DIRz 	- PB5 	- GPIO B
+	// DIRy 	- PB11 	- GPIO B
 	GPIOB_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_11;
 	GPIOB_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIOB_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
@@ -62,8 +62,8 @@ void GPIO_init(void)  {
 
 
 //_________________________ GPIOC _________________________//
-	// DIR Signal x 	- PC2 	- GPIO C
-	// DIR Signal drill	- PC9 	- GPIO C
+	// DIRx	 	- PC2 	- GPIO C
+	// DIRs		- PC9 	- GPIO C
 	GPIOC_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_9;
 	GPIOC_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIOC_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
@@ -74,7 +74,7 @@ void GPIO_init(void)  {
 
 
 //_________________________ GPIOD _________________________//
-	// EN  Signal y 	- PD13 	- GPIO D
+	// ENAy	 	- PD13 	- GPIO D
 	GPIOD_InitStructure.GPIO_Pin = GPIO_Pin_13;
 	GPIOD_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIOD_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
@@ -85,9 +85,9 @@ void GPIO_init(void)  {
 
 
 //_________________________ GPIOF _________________________//
-	// EN  Signal x		- PF2	- GPIO F
-	// EN  Signal drill	- PF6 	- GPIO F
-	// EN  Signal z 	- PF9 	- GPIO F
+	// ENAx		- PF2	- GPIO F
+	// ENAs		- PF6 	- GPIO F
+	// ENAz 	- PF9 	- GPIO F
 	GPIOF_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_6 | GPIO_Pin_9;
 	GPIOF_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIOF_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;

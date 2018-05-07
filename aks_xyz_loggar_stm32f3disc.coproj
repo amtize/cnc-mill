@@ -125,13 +125,13 @@
     <File name="stm32f3_discovery/stm32f3_discovery_lsm303dlhc.c" path="stm32f3_discovery/stm32f3_discovery_lsm303dlhc.c" type="1"/>
     <File name="stdio" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f30x_spi.c" path="cmsis_lib/source/stm32f30x_spi.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f30x_syscfg.c" path="cmsis_lib/source/stm32f30x_syscfg.c" type="1"/>
     <File name="cmsis_boot/stm32f30x.h" path="cmsis_boot/stm32f30x.h" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_syscfg.c" path="cmsis_lib/source/stm32f30x_syscfg.c" type="1"/>
     <File name="cmsis_lib/source/stm32f30x_i2c.c" path="cmsis_lib/source/stm32f30x_i2c.c" type="1"/>
-    <File name="example/stm32f30x_it.h" path="example/stm32f30x_it.h" type="1"/>
     <File name="cmsis_lib/include/stm32f30x_syscfg.h" path="cmsis_lib/include/stm32f30x_syscfg.h" type="1"/>
     <File name="cmsis_lib/source/stm32f30x_dma.c" path="cmsis_lib/source/stm32f30x_dma.c" type="1"/>
+    <File name="example/stm32f30x_it.h" path="example/stm32f30x_it.h" type="1"/>
     <File name="methods/GPIO_methods.c" path="metodar/GPIO_methods.c" type="1"/>
     <File name="stm32f3_discovery/stm32f3_discovery.h" path="stm32f3_discovery/stm32f3_discovery.h" type="1"/>
     <File name="cmsis_lib/source/stm32f30x_tim.c" path="cmsis_lib/source/stm32f30x_tim.c" type="1"/>
@@ -146,8 +146,8 @@
     <File name="methods/extern_declarations_global_variables.h" path="metodar/extern_declarations_global_variables.h" type="1"/>
     <File name="stm32f3_discovery/stm32f3_discovery_l3gd20.h" path="stm32f3_discovery/stm32f3_discovery_l3gd20.h" type="1"/>
     <File name="methods/definitions.h" path="metodar/definitions.h" type="1"/>
-    <File name="cmsis_lib/include" path="" type="2"/>
     <File name="cmsis_boot/system_stm32f30x_temp.c" path="cmsis_boot/system_stm32f30x_temp.c" type="1"/>
+    <File name="cmsis_lib/include" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f30x_usart.c" path="cmsis_lib/source/stm32f30x_usart.c" type="1"/>
     <File name="main.c" path="main.c" type="1"/>
     <File name="cmsis_lib/source/stm32f30x_rcc.c" path="cmsis_lib/source/stm32f30x_rcc.c" type="1"/>
