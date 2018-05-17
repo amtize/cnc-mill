@@ -15,7 +15,7 @@
 //
 // DIRs		- PC9 	- DIRECTION SIGNAL FOR SPINDLE MOTOR
 // ENAs		- PF6 	- ENABLE SIGNAL FOR SPINDLE MOTOR
-
+// PWMs		- PC8
 
 //---------------------------------------
 // Includes
@@ -40,8 +40,10 @@ void GPIO_init(void)  {
 // TypeDef
     GPIO_InitTypeDef   GPIOB_InitStructure;
     GPIO_InitTypeDef   GPIOC_InitStructure;
+    GPIO_InitTypeDef   GPIOC2_InitStructure;
     GPIO_InitTypeDef   GPIOD_InitStructure;
     GPIO_InitTypeDef   GPIOF_InitStructure;
+    GPIO_InitTypeDef   GPIOF2_InitStructure;
 
 //Activate GPIO modules
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
@@ -64,12 +66,20 @@ void GPIO_init(void)  {
 //_________________________ GPIOC _________________________//
 	// DIRx	 	- PC2 	- GPIO C
 	// DIRs		- PC9 	- GPIO C
-	GPIOC_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_9;
+	// PWMs
+	GPIOC_InitStructure.GPIO_Pin = GPIO_Pin_2;
 	GPIOC_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIOC_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
 	GPIOC_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIOC_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOC, &GPIOC_InitStructure);
+
+	GPIOC2_InitStructure.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_8;
+	GPIOC2_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+	GPIOC2_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
+	GPIOC2_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIOC2_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
+	GPIO_Init(GPIOC, &GPIOC2_InitStructure);
 //_________________________________________________________//
 
 
@@ -86,13 +96,21 @@ void GPIO_init(void)  {
 
 //_________________________ GPIOF _________________________//
 	// ENAx		- PF2	- GPIO F
-	// ENAs		- PF6 	- GPIO F
 	// ENAz 	- PF9 	- GPIO F
-	GPIOF_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_6 | GPIO_Pin_9;
+	GPIOF_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_9;
 	GPIOF_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIOF_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
 	GPIOF_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIOF_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOF, &GPIOF_InitStructure);
+
+
+	// ENAs		- PF6 	- GPIO F
+	GPIOF2_InitStructure.GPIO_Pin = GPIO_Pin_6;
+	GPIOF2_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+	GPIOF2_InitStructure.GPIO_Speed = GPIO_Speed_Level_1;
+	GPIOF2_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIOF2_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
+	GPIO_Init(GPIOF, &GPIOF2_InitStructure);
 //_________________________________________________________//
 }

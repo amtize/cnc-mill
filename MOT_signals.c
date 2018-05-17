@@ -201,11 +201,15 @@ void signal_z_set_en(uint8_t en){
 // PWM Signal drill  - PC8 	- TIM8_CH3
 // PWM-signal adjustments. Initializations are done in "TIM_methods.c".
 void signal_drill_set_freq(uint16_t freq){
-	TIM8->ARR = 1000000/freq - 1; 		//Period = (Timer frequency after prescaling / frequency) - 1 (reason unknown)
-	TIM8->CCR1 = (1000000/freq - 1)/2;
-	TIM8->CR1 |= 0x01;
-	//TIM8->CR1 = 0x81;
+	GPIOC->ODR ^= GPIO_Pin_8;
+
 }
+
+//	TIM8->ARR = 1000000/freq - 1; 		//Period = (Timer frequency after prescaling / frequency) - 1 (reason unknown)
+//	TIM8->CCR1 = (1000000/freq - 1)/2;
+//	TIM8->CR1 |= 0x01;
+	//TIM8->CR1 = 0x81;
+
 
 
 
@@ -240,5 +244,7 @@ void signal_drill_set_en(uint8_t en){
 		}
 	}
 }
+
+
 
 //___________________________________________________________________________________//

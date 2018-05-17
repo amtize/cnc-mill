@@ -9,7 +9,6 @@
 // Signal x 	- PA1 	- TIM2_CH2
 // Signal y 	- PD12 	- TIM4_CH1
 // Signal z 	- PB4 	- TIM3_CH1
-// Signal drill - PC8 	- TIM8_CH3
 
 //---------------------------------------
 // Includes
@@ -175,36 +174,36 @@ void TIM3_init(void) {
 //__________________________ Signal drill - PC8	- TIM8_CH3 __________________________//
 
 void TIM8_init(void) {
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM8, ENABLE);
-	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
-
-	TIM_TimeBaseInitTypeDef TIM8_init;
-	TIM8_init.TIM_Prescaler = 71;
-	TIM8_init.TIM_CounterMode = TIM_CounterMode_Up;
-	TIM8_init.TIM_Period = PWM_period;
-	TIM8_init.TIM_ClockDivision = 0;
-	TIM_TimeBaseInit(TIM8, &TIM8_init);
-
-	TIM_OCInitTypeDef TIM8_OCinit;
-	TIM8_OCinit.TIM_OCMode = TIM_OCMode_PWM1;
-	TIM8_OCinit.TIM_OutputState = TIM_OutputState_Enable;
-	TIM8_OCinit.TIM_Pulse = PWM_width;
-	TIM8_OCinit.TIM_OCPolarity = TIM_OCPolarity_High;
-	TIM_OC1Init(TIM8, &TIM8_OCinit);
-
-	GPIO_InitTypeDef TIM8_GPIOinit;
-	TIM8_GPIOinit.GPIO_Pin = GPIO_Pin_8;
-	TIM8_GPIOinit.GPIO_Mode = GPIO_Mode_AF;
-	TIM8_GPIOinit.GPIO_Speed = GPIO_Speed_Level_1;
-	TIM8_GPIOinit.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_Init(GPIOC, &TIM8_GPIOinit);
-
-	GPIO_PinAFConfig(GPIOC, GPIO_PinSource8, GPIO_AF_4);
-
-	//TIM_OC1PreloadConfig(TIM8, TIM_OCPreload_Enable);
-	//TIM_ARRPreloadConfig(TIM8, ENABLE);
-	//TIM_CtrlPWMOutputs(TIM8, ENABLE);
-	TIM_Cmd(TIM8, ENABLE);
+//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM8, ENABLE);
+//	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
+//
+//	TIM_TimeBaseInitTypeDef TIM8_init;
+//	TIM8_init.TIM_Prescaler = 71;
+//	TIM8_init.TIM_CounterMode = TIM_CounterMode_Up;
+//	TIM8_init.TIM_Period = PWM_period;
+//	TIM8_init.TIM_ClockDivision = 0;
+//	TIM_TimeBaseInit(TIM8, &TIM8_init);
+//
+//	TIM_OCInitTypeDef TIM8_OCinit;
+//	TIM8_OCinit.TIM_OCMode = TIM_OCMode_PWM1;
+//	TIM8_OCinit.TIM_OutputState = TIM_OutputState_Enable;
+//	TIM8_OCinit.TIM_Pulse = PWM_width;
+//	TIM8_OCinit.TIM_OCPolarity = TIM_OCPolarity_High;
+//	TIM_OC1Init(TIM8, &TIM8_OCinit);
+//
+//	GPIO_InitTypeDef TIM8_GPIOinit;
+//	TIM8_GPIOinit.GPIO_Pin = GPIO_Pin_8;
+//	TIM8_GPIOinit.GPIO_Mode = GPIO_Mode_AF;
+//	TIM8_GPIOinit.GPIO_Speed = GPIO_Speed_Level_1;
+//	TIM8_GPIOinit.GPIO_PuPd = GPIO_PuPd_NOPULL;
+//	GPIO_Init(GPIOC, &TIM8_GPIOinit);
+//
+//	GPIO_PinAFConfig(GPIOC, GPIO_PinSource8, GPIO_AF_4);
+//
+//	//TIM_OC1PreloadConfig(TIM8, TIM_OCPreload_Enable);
+//	//TIM_ARRPreloadConfig(TIM8, ENABLE);
+//	//TIM_CtrlPWMOutputs(TIM8, ENABLE);
+//	TIM_Cmd(TIM8, ENABLE);
 }
 
 

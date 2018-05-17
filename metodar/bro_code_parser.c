@@ -25,7 +25,7 @@ float DISTANCE_PER_STEP = (float)DISTANCE_PER_ROTATION / (STEP_MULTIPLIER * STEP
 
 //static int MAX_X =700000;                      //um
 //static int MAXY_Y =500000;                     //um
-#define MAX_FREQUENCY 2000
+#define MAX_FREQUENCY 1000
 float MAX_FREQUENCY_ADJUSTED = MAX_FREQUENCY / 1.57079632679; //hz / (pi/2)
 //static float MAX_SPEED = 0;//DISTANCE_PER_STEP * MAX_FREQUENCY;
 
@@ -80,6 +80,21 @@ BRO_CODE * parse(char *str) {
             free(point);
             break;
         }
+         if (*str == 'R') {
+        	 bro_code->cmd = Move_Linear;
+        	 str++;
+        	 POINT *point = parse_point(str);
+        	 bro_code->point = *point;
+        	 free(point);
+        	 bro_code->point.x += CURRENT_POS.x;
+        	 bro_code->point.y += CURRENT_POS.y;
+        	 bro_code->point.z += CURRENT_POS.z;
+        	 break;
+         }
+         if (*str == 'S') {
+        	 bro_code->cmd = Off;
+        	 break;
+         }
     }
     return bro_code;
 }
@@ -201,7 +216,23 @@ char ** split(char *str, char c) {
 //}
 
 
+void handle_end_stop() {
+	int32_t x = (-30 * EOAX) + (30 * SOAX);
+	int32_t y = (-30 * EOAY) + (30 * SOAY);
 
+	EOAX = 0; SOAX = 0; EOAY = 0; SOAY = 0;
+	END_STOP_ENGAGED = 0;
+
+	char buf[64];
+	sprintf(buf, "R(%i,%i,0);", x, y);
+
+	test_code = buf;
+
+	usart_send_string(buf);
+	usart_send_string("\n");
+
+	BRO_CODE_BUFFERED = 1;
+}
 
 
 MOTOR_INSTRUCTION * calculate_frequencies(BRO_CODE* bro_code) {
@@ -246,9 +277,9 @@ MOTOR_INSTRUCTION * calculate_frequencies(BRO_CODE* bro_code) {
     // TODO: Freq_z currently set to 0, fix this.
 
     // Calculate number of steps
-    inst->num_steps_x = (uint32_t) delta_x; // DISTANCE_PER_STEP;
-    inst->num_steps_y = (uint32_t) delta_y; // DISTANCE_PER_STEP;
-    inst->num_steps_z = (uint32_t) delta_z; // DISTANCE_PER_STEP;
+    inst->num_steps_x = (uint32_t) delta_x * 100; // DISTANCE_PER_STEP;
+    inst->num_steps_y = (uint32_t) delta_y * 100; // DISTANCE_PER_STEP;
+    inst->num_steps_z = (uint32_t) delta_z * 100; // DISTANCE_PER_STEP;
 
     return inst;
 }

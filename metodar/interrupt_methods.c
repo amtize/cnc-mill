@@ -48,7 +48,7 @@ void avbrot_oppstart(void) {
 void SysTick_oppstart(void) {
   NVIC_SetPriority(SysTick_IRQn, 3); // 0-31 der 0 er høgast
   SysTick->CTRL = 0;  // Stopp teljaren
-  SysTick->LOAD = 72000;  // Startverdi gir 1 msek avbrotsintervall.
+  SysTick->LOAD = 250000;  // Startverdi gir 1 msek avbrotsintervall.
   SysTick->VAL = 0;  // Nullstill teljaren
   SysTick->CTRL = (SysTick_CTRL_ENABLE_Msk | SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_CLKSOURCE_Msk) ;
 }
@@ -57,7 +57,13 @@ void SysTick_oppstart(void) {
 //----------------------------------------------------------------
 
 void SysTick_Handler(void) { // Hvert  1 ms
-//	counter_1ms++;
+	signal_drill_set_freq(1);
+	counter_1ms++;
+
+	if (counter_1ms >= 600) {
+		MACHINE_STATE = 1;
+	}
+	//	counter_1ms++;
 //	if ((teller_1ms>=0)&(teller_1ms<=10000)){state=0;}
 //	if ((teller_1ms>=10000)&(teller_1ms<=20000)){state=0;}
 //	if ((teller_1ms>=20000)&(teller_1ms<=30000)){state=0;}
@@ -361,15 +367,37 @@ void EXTI_init(void){
 void EXTI9_5_IRQHandler(void){
 	// EOAx		- PA9	- EXTI_Line9 	- PRI 1	- SUBPRI 3
 	if(EXTI_GetITStatus(EXTI_Line9) != RESET){
-		signal_x_set_en(0);
-		counter_1ms++;
+		if (MACHINE_STATE == 1) {
+			if (!(GPIOA->IDR & GPIO_Pin_9)) {
+				signal_x_set_en(0);
+//
+//				char buf[64];
+//				sprintf(buf, "Steps:%i", count_step_signal_x);
+//				usart_send_string(buf);
+//				usart_send_string("\n");
+
+				END_STOP_ENGAGED = 1;
+				EOAX = 1;
+			}
+		}
 		EXTI_ClearITPendingBit(EXTI_Line9);
 	}
 
 	// SOAy		- PB8	- EXTI_Line8 	- PRI 1	- SUBPRI 1
 	if(EXTI_GetITStatus(EXTI_Line8) != RESET){
-		signal_y_set_en(0);
-		counter_1ms++;
+		if (MACHINE_STATE == 1) {
+			if (!(GPIOB->IDR & GPIO_Pin_8)) {
+				signal_y_set_en(0);
+				END_STOP_ENGAGED = 1;
+				SOAY = 1;
+
+
+			char buf[64];
+			sprintf(buf, "Steps:%i", count_step_signal_y);
+			usart_send_string(buf);
+			usart_send_string("\n");
+			}
+		}
 		EXTI_ClearITPendingBit(EXTI_Line8);
 	}
 }
@@ -379,29 +407,38 @@ void EXTI9_5_IRQHandler(void){
 void EXTI15_10_IRQHandler(void){
 	// SOAx		- PA10	- EXTI_Line10 	- PRI 1	- SUBPRI 0
 	if(EXTI_GetITStatus(EXTI_Line10) != RESET){
-		signal_x_set_en(0);
-		counter_1ms++;
+		if (MACHINE_STATE == 1) {
+			if (!(GPIOA->IDR & GPIO_Pin_10)) {
+				signal_x_set_en(0);
+				END_STOP_ENGAGED = 1;
+				SOAX = 1;
+			}
+		}
 		EXTI_ClearITPendingBit(EXTI_Line10);
 	}
 
 	// EOAy		- PA15	- EXTI_Line15 	- PRI 1	- SUBPRI 4
 	if(EXTI_GetITStatus(EXTI_Line15) != RESET){
-		signal_y_set_en(0);
-		counter_1ms++;
+		if (MACHINE_STATE == 1) {
+			if (!(GPIOA->IDR & GPIO_Pin_15)) {
+				signal_y_set_en(0);
+				END_STOP_ENGAGED = 1;
+				EOAY = 1;
+			}
+		}
 		EXTI_ClearITPendingBit(EXTI_Line15);
 	}
 
 	// SOAz		- PC12	- EXTI_Line12 	- PRI 1	- SUBPRI 2
 	if(EXTI_GetITStatus(EXTI_Line12) != RESET){
-		signal_z_set_en(0);
-		counter_1ms++;
+//		signal_z_set_en(0);
+//		signal_x_set_en(0);
 		EXTI_ClearITPendingBit(EXTI_Line12);
 	}
 
 	// EOAz		- PC11	- EXTI_Line11 	- PRI 1	- SUBPRI 5
 	if(EXTI_GetITStatus(EXTI_Line11) != RESET){
-		signal_z_set_en(0);
-		counter_1ms++;
+//		signal_x_set_en(0);
 		EXTI_ClearITPendingBit(EXTI_Line11);
 	}
 }
@@ -431,11 +468,11 @@ void EXTI1_IRQHandler(void){
 	if(EXTI_GetITStatus(EXTI_Line1) != RESET){
 		count_step_signal_y++;
 
-		if (count_step_signal_y > number_of_steps_signal_y) {
-			MOTOR_Y_ACTIVE = 0;
-			count_step_signal_y = 0;
-			signal_y_set_en(0);
-		}
+//		if (count_step_signal_y > number_of_steps_signal_y) {
+//			MOTOR_Y_ACTIVE = 0;
+//			count_step_signal_y = 0;
+//			signal_y_set_en(0);
+//		}
 
 		EXTI_ClearITPendingBit(EXTI_Line1);
 	}
